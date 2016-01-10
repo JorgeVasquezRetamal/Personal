@@ -5,11 +5,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Pagina de Login</title>
+	<title>Login</title>
 	<meta name="description" content="">
-	<meta name="author" content="Prueba - Chile">
+	<meta name="author" content="- Chile">
 	
-	<link rel="shortcut icon" href="{{ URL::asset('img/carita.png') }}"> 
+	<link rel="shortcut icon" href="{{ URL::asset('img/carita2.png') }}"> 
 	{{ HTML::style('assets/bootstrap/css/bootstrap.min.css') }}
 	{{ HTML::style('assets/bootstrap/css/bootstrap-theme.min.css') }}
 	{{ HTML::style('assets/font-awesome/css/font-awesome.min.css') }}
@@ -29,8 +29,12 @@
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
 			<div style="text-align:center">
-				<h3><strong>Teatinos</strong></h3>
-				<br><br>			
+				<h3><strong>Sistema</strong></h3>
+				<br><br>
+
+				<a href="{{URL::to('/')}}">
+					{{ HTML::image('img/logo2.jpg', 'LOGO Sistema', array('height'=>'80')) }}
+				</a> 			
 				
 			</div>
 			<hr>

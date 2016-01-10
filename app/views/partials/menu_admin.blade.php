@@ -11,7 +11,7 @@
 	</li>
 	<li class="dropdown">
 	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			Diplomas <span class="caret"></span>
+			Consultas <span class="caret"></span>
 	</a>
 	<ul class="dropdown-menu">
 		

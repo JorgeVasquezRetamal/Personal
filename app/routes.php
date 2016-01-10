@@ -37,6 +37,12 @@
 
 });*/
 
+App::missing(function($exception)
+{
+	return Response::View('/error/error404', array(), 404);
+
+});
+
 
 Route::get('/', array('uses' => 'sistema\HomeController@getIndex'));
 Route::controller('home', 'sistema\HomeController');

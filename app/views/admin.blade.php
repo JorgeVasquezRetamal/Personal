@@ -1,5 +1,10 @@
 @extends('layouts')
 @section('content')
-hola soy administrador
 
+ <p class="lead">Bienvenido : {{ Auth::user()->usuario  }}</p> 
+
+<hr>
+<hr>
 @stop
+
+

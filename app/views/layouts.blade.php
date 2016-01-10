@@ -5,11 +5,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Pagina Prueba</title>
+	<title>Sistema</title>
 	<meta name="description" content="">
 	<meta name="author" content="Prueba - Chile">
 	
-	<link rel="shortcut icon" href="{{ URL::asset('img/carita.png') }}"> 
+	<link rel="shortcut icon" href="{{ URL::asset('img/carita2.png') }}"> 
 	{{ HTML::style('assets/bootstrap/css/bootstrap.min.css') }}
 	{{ HTML::style('assets/bootstrap/css/bootstrap-theme.min.css') }}
 	{{ HTML::style('assets/font-awesome/css/font-awesome.min.css') }}
@@ -27,9 +27,9 @@
 	<header class="well">
 		<div class="row">
 			<div class="col-md-3 brand">
-				<a href="http://www.humancoachingnetwork.com/" target="_blank">
-					{{-- HTML::image('img/HumanCoachingNetwork.png', 'LOGO HCN', array('height'=>'80')) --}}
-				</a> 
+				<a href="{{URL::to('/')}}">
+					{{ HTML::image('img/logo2.jpg', 'LOGO Sistema', array('height'=>'80')) }}
+				</a> 	
 			</div>
 			<div class="col-md-7">
 				<br><br>
