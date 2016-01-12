@@ -17,25 +17,7 @@
 });*/
 
 
-//Route::get('/', array('uses' => 'HomeController@getIndex'));
 
-/* Route::get('/', function()
-{
-	$teatinos=DB::table('consulta_atm')->get();
-	return $teatinos;
-}); */
-
-/* Route::get('/', function()
-{
-	$teatinos2=DB::table('consulta_atm')->find(2);
-	dd ($teatinos2); 
-}); */
-
-/*App::missing(function($exception)
-{
-	return Response::View('/error/error404', array(), 404);
-
-});*/
 
 App::missing(function($exception)
 {
@@ -46,19 +28,19 @@ App::missing(function($exception)
 
 Route::get('/', array('uses' => 'sistema\HomeController@getIndex'));
 Route::controller('home', 'sistema\HomeController');
-Route::controller('users', 'sistema\UsersController');
+//Route::controller('users', 'sistema\UsersController');
+
+Route::controller('usuarios', 'sistema\UsersController');
+
+//Ruta necesaria para cargar combo ciudad//
+Route::controller('ciudad', 'sistema\CiudadesController');
 
 
 
 
 
- Route::get('/consulta', function()
-{
-	//$teatinos2=DB::table('consulta_atm')->where('atm','=','6323')->get();
-	//return $teatinos2;
-	$teatinos2 = Consulta::all();
-	return $teatinos2;
-}); 
+ 
+
 
 
 

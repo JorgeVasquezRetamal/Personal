@@ -7,7 +7,7 @@
 
 	<title>Sistema</title>
 	<meta name="description" content="">
-	<meta name="author" content="Prueba - Chile">
+	<meta name="author" content="Chile">
 	
 	<link rel="shortcut icon" href="{{ URL::asset('img/carita2.png') }}"> 
 	{{ HTML::style('assets/bootstrap/css/bootstrap.min.css') }}
@@ -34,7 +34,7 @@
 			<div class="col-md-7">
 				<br><br>
 				<ul class="nav nav-pills pull-right">
-				  	@if(Auth::user()->perfil=='root')
+				  	@if(Auth::user()->perfil=='Administrador')
 				  		@include('partials.menu_admin')
 				  {{--	@else
 				  		@include('partials.menu_coordinate')--}}
@@ -52,7 +52,7 @@
 	{{ HTML::script('assets/bootstrap/js/bootstrap.min.js') }}
 	{{ HTML::script('assets/fullcalendar/fullcalendar.min.js') }}
 	{{ HTML::script('assets/select2/select2.min.js') }}
-	<script src="http://code.highcharts.com/highcharts.js"></script>
+	{{--<script src="http://code.highcharts.com/highcharts.js"></script>--}}
 	{{ HTML::script('assets/datetimepicker/jquery.datetimepicker.js') }}
 	
 	{{ HTML::script('assets/datatables/jquery.dataTables.min.js') }}
@@ -60,11 +60,12 @@
 	{{ HTML::script('assets/datatables/dataTables.bootstrap.js') }}
 	{{ HTML::script('assets/jquery-te/jquery-te-1.4.0.min.js') }}
 	{{ HTML::script('assets/jquery.numeric.js') }}
-	{{ HTML::script('js/diplomas/main.js') }}
+	{{ HTML::script('js/sistema/main.js') }}
+	
 
 	{{-- HTML::script('js/diplomas/app.js') --}}
 
-	{{ HTML::script('assets/jquery.Rut.min.js') }}
+	{{-- HTML::script('assets/jquery.Rut.min.js') --}}
 
 	 
 	<script>

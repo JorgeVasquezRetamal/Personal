@@ -38,10 +38,12 @@
 				
 			</div>
 			<hr>
-			
+							
 	<!-- Formulario ingreso al sistema  -->
 
 			{{ Form::open(array('action'=>'sistema\HomeController@postLogin')) }}
+
+
 			
 				<div class="panel panel-default">
 					<div class="panel-heading">Ingresar al Sistema</div>
@@ -75,6 +77,10 @@
 						<button class="btn btn-primary btn-lg" type="submit">Ingresar <i class="fa fa-sign-in"></i></button>
 					</div>
 				</div>
+
+				
+
+
 			{{ Form::close() }} 
 
 		</div>

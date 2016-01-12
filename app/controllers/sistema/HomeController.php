@@ -21,7 +21,7 @@ class HomeController extends BaseController {
 		if (Auth::attempt(array('usuario' => Input::get('user'), 'password' => Input::get('password'))))
 		{
 			//return 'hola2';
-		    if(Auth::user()->perfil=='root') return Redirect::action('sistema\HomeController@getAdmin');
+		    if(Auth::user()->perfil=='Administrador') return Redirect::action('sistema\HomeController@getAdmin');
 		    //return 'hola';
 		    else return Redirect::action('sistema\HomeController@getHome');
 		}
@@ -33,7 +33,7 @@ class HomeController extends BaseController {
 
 	public function getAdmin()
 	{
-		//Asset::add('js/sistemas/requests.js');
+		//Asset::add('js/sistema/requests.js');
 		return View::make('admin');
 	}
 
@@ -45,7 +45,7 @@ class HomeController extends BaseController {
 	public function getIndex(){
 		
 		if (Auth::check()){
-			if(Auth::User()->perfil=='root') return Redirect::intended('home/admin');
+			if(Auth::User()->perfil=='Administrador') return Redirect::intended('home/admin');
 		    else return Redirect::intended('home/home');
 		}
 

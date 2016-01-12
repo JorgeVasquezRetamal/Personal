@@ -83,18 +83,13 @@ $(function(){
 	});
 
 
-	$('#country_id').change(function(){		
+//Inicio llamada Ciudades en base al pais
+		$('#pais_id').change(function(){		
 		var idc = $(this).val();
 		if(idc == '') idc = 0;
-		//$('#param_name_courses_id').val('');
-		$('#param_name_courses_id').select2('val','');
-		
-		//$('#param_name_courses_id').html('<option value="">--Cargando--</option>');
-
-		//select = document.getElementById('city_id');
-		select = document.getElementById('param_name_courses_id');
-		
-
+		//$('#ciudad_id').val('');
+		//$('#ciudad_id').select2('val','');
+		select = document.getElementById('ciudad_id');
 
 		if(idc > 0){
 			$('#nic').attr('disabled', false);
@@ -104,56 +99,27 @@ $(function(){
 					select.options[i].remove();
 				};
 
-				//$.get(HOME+'/cities/cities/'+idc, function(data){
-				//$.get(HOME+'/courses/students/'+idc, function(data){
-				//            clase   funcion
-				$.get(HOME+'/courses/courses/'+idc, function(data){
+				$.get(HOME+'/ciudad/ciudad/'+idc, function(data){
 					if(data!=''){
-						$('<option value="">--Todos--</option>').appendTo($('#param_name_courses_id'));
+						$('<option value="">--Seleccione una ciudad--</option>').appendTo($('#ciudad_id'));
 						for (var i = 0; i<data.length; i++) {
-							$('<option value="'+data[i].id+'">'+data[i].name+'</option>').appendTo($('#param_name_courses_id'));
+							$('<option value="'+data[i].id+'">'+data[i].nombre+'</option>').appendTo($('#ciudad_id'));
 						};
 					}else{
 						console.log('fail');
-						$('#param_name_courses_id').html('<option value="">--Todos--</option>');
+						$('#ciudad_id').html('<option value="">--No existen ciudades--</option>');
 					}
+
+					
 				}, 'json')
 			}
 
 
 
-			$.get(HOME+'/countries/code/'+idc, function(data){
-				if(data!=''){
-					$('#span_calling_code').text(data);
-					$('#span_calling_code2').text(data);
-					$('#calling_code').attr('value',data);
-					$('#calling_code2').attr('value',data);
-					//console.log(data);
-					if(data == 56){
-						$('#div_rut').show();
-						$('#rut').attr('required', true);
-						$('#div_nic').hide();
-						$('#nic').val('');
-						$('#nic').removeAttr('required');
-					}else{
-						$('#div_nic').show();
-						$('#nic').attr('required', true);
-						$('#div_rut').hide();
-						$('#rut').val('');
-						$('#rut').removeAttr('required');
-					}
-				}
-			}, 'json')
-
-		}else{
-			$('#span_calling_code').text('');
-			$('#span_calling_code2').text('');
-			$('#calling_code').attr('value','');
-			$('#calling_code2').attr('value','');
-			
 		}
 
 	});
+//Termino llamada Ciudades en base al pais
 
 	$('#param_name_courses_id').change(function(){
 		var idc = '';
