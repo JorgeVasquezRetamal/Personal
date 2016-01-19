@@ -1,6 +1,7 @@
 <?php
+
 namespace sistema;
-use \BaseController, \View, \Input, \Redirect, \Auth, \Response;
+use \BaseController, \View, \Input, \Hash, \Redirect, \DB, \Auth, \Utils, \Response, \Excel;
 
 class CiudadesController extends BaseController 
 {

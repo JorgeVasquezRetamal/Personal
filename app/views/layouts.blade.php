@@ -53,19 +53,20 @@
 	{{ HTML::script('assets/fullcalendar/fullcalendar.min.js') }}
 	{{ HTML::script('assets/select2/select2.min.js') }}
 	{{--<script src="http://code.highcharts.com/highcharts.js"></script>--}}
+
+	{{-- aca para datepicker  --}}
 	{{ HTML::script('assets/datetimepicker/jquery.datetimepicker.js') }}
+	{{ HTML::script('js/sistema/main.js') }}
+	{{ HTML::script('assets/jquery-te/jquery-te-1.4.0.min.js') }}
+	{{-- aca para datepicker  --}}
 	
 	{{ HTML::script('assets/datatables/jquery.dataTables.min.js') }}
 	
 	{{ HTML::script('assets/datatables/dataTables.bootstrap.js') }}
-	{{ HTML::script('assets/jquery-te/jquery-te-1.4.0.min.js') }}
-	{{ HTML::script('assets/jquery.numeric.js') }}
-	{{ HTML::script('js/sistema/main.js') }}
 	
+	{{ HTML::script('assets/jquery.numeric.js') }}
 
-	{{-- HTML::script('js/diplomas/app.js') --}}
 
-	{{-- HTML::script('assets/jquery.Rut.min.js') --}}
 
 	 
 	<script>
@@ -75,6 +76,7 @@
 		@yield('scripts')
 	</script>
 	{{ Asset::scripts() }}
+
 
 
 </body>

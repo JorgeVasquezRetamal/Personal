@@ -35,6 +35,13 @@ Route::controller('usuarios', 'sistema\UsersController');
 //Ruta necesaria para cargar combo ciudad//
 Route::controller('ciudad', 'sistema\CiudadesController');
 
+//Ruta necesaria para descargar Excel//
+//Ruta mostrada navegador excel  
+Route::controller('excel', 'sistema\OtrosController');
+
+Route::controller('carga', 'sistema\Import2Controller');
+
+
 
 
 

@@ -1,6 +1,6 @@
 <?php
 namespace sistema;
-use \BaseController, \View, \Input, \Hash, \Redirect, \DB, \Auth;
+use \BaseController, \View, \Input, \Hash, \Redirect, \DB, \Auth, \Utils, \Response, \Excel;
 
 class UsersController extends BaseController {
 	public function __construct(){
@@ -14,13 +14,19 @@ class UsersController extends BaseController {
 						->orderBy('nombre')
 						->get(array('id', 'created_at', 'updated_at','nombre', 'usuario', 'password', 'perfil', 'estado', 'direccion','pais_id','ciudad_id','remember_token'));
 
+		
 		$users_inact = User::wherePerfil('Administrador')
 						->whereEstado('Inactivo')
 						->orderBy('nombre')
 						->get(array('id', 'created_at', 'updated_at','nombre', 'usuario', 'password', 'perfil', 'estado', 'direccion','pais_id','ciudad_id','remember_token'));
 
+		
+		$paises = Pais::whereEstado('Activo')
+						->get(array('id', 'created_at', 'updated_at','nombre', 'estado'));
+
+
 		//retorna a la vista \sistema\usuarios\index.blade.php  pasamos los datos de los usuarios
-		return View::make('sistema.usuarios.index')->with('users_act', $users_act)->with('users_inact', $users_inact);
+		return View::make('sistema.usuarios.index')->with('users_act', $users_act)->with('users_inact', $users_inact)->with('paises', $paises);
 		
 	}
 
@@ -29,21 +35,18 @@ class UsersController extends BaseController {
 	// 2.-
 	public function getCreate()
 	{
-		$pais_cmb = Pais::whereEstado('Activo')->lists('nombre', 'id');
-		$pais_cmb = array(''=>'--Seleccione una país--')+$pais_cmb;
+		$pais = Pais::whereEstado('Activo')->lists('nombre', 'id');
+		$pais_cmb = array(''=>'--Seleccione una país--')+$pais;
 
+		//$ciudad = Ciudad::whereEstado('Activo')->lists('nombre', 'id');
+		//$ciudad_cmb = array(''=>'--Seleccione una ciudad--')+$ciudad;
 		$ciudad_cmb = array(''=>'--Seleccione una ciudad--');
-
-		
-
 		
 		//nos envia al formulario create.blade.php
 		return View::make('sistema.usuarios.create')
 			->with('ciudad_cmb', $ciudad_cmb)
 			->with('pais_cmb', $pais_cmb);
 	}
-
-
 
 	//opción VER
 	public function getVer($user_id){
@@ -58,9 +61,6 @@ class UsersController extends BaseController {
 				->with('pais_cmb', $pais_cmb)
 				->with('user', $user);
 	}
-
-	
-
 
 		public function getEdit($user_id){
 		$user = User::find($user_id);
@@ -107,6 +107,7 @@ class UsersController extends BaseController {
 		$user->pais_id = Input::get('pais_id', DB::raw('NULL'));
 		$user->perfil    = (Input::get('perfil')) ? Input::get('perfil') : 'Administrador';
 		$user->pais_id = Input::get('pais_id', DB::raw('NULL'));
+		$user->fechanacimiento = Utils::date_es_to_en(Input::get('fnacimiento'));
 		$user->save();
 
 		if($user->perfil=='Administrador')
@@ -139,6 +140,6 @@ class UsersController extends BaseController {
 	}
 
 
-	
+
 
 }

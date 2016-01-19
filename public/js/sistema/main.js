@@ -7,6 +7,8 @@ $(function(){
 		});
 	}
 
+
+
 	if(jQuery().select2){
 		$('.select2').select2({
 			formatNoMatches: 'No se han encontrado coincidencias',
@@ -88,7 +90,7 @@ $(function(){
 		var idc = $(this).val();
 		if(idc == '') idc = 0;
 		//$('#ciudad_id').val('');
-		//$('#ciudad_id').select2('val','');
+		$('#ciudad_id').select2('val','');
 		select = document.getElementById('ciudad_id');
 
 		if(idc > 0){

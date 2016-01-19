@@ -24,6 +24,7 @@
 		  			<div class="col-md-3">
 		  				{{ Form::label('password', 'Contraseña') }}
 		        		{{ Form::password('password', array('class'=>'form-control', 'required' => true)) }}
+		        		
 		  			</div>
 		  		</div>
 		  		<hr class="soften">
