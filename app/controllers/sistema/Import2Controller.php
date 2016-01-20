@@ -29,6 +29,7 @@ class Import2Controller extends \BaseController
 
         }
 
+
         //traer nombre del archivo a cargar
         
 
@@ -42,30 +43,42 @@ class Import2Controller extends \BaseController
         }
         //->delete();
 
+//return $realName;
 
-
-        Excel::load(Input::file('file'), function($reader) 
+        Excel::load(Input::file('file'), function($reader) use ($realName) 
 
         {
 
-         foreach ($reader->get() as $scifi)   
-         {
-            Scifi::create([
-               'personaje'=>$scifi->personaje,
-               'pelicula'=>$scifi->pelicula
+             foreach ($reader->get() as $scifi)   
+             {
+                $new_scifi = new Scifi;
+                $new_scifi->personaje = $scifi->personaje; 
+                $new_scifi->pelicula = $scifi->pelicula; 
+                $new_scifi->arc_carga = $realName; 
+                $new_scifi->save(); 
+               // Scifi::create([
+               //     'personaje'=>$scifi->personaje,
+               //     'pelicula'=>$scifi->pelicula,
+               //     'arc_carga'=>$realName->arc_carga
 
 
-               ]);
-        }
-    });
+               //     ]);
+            }
+
+        });
+            return Redirect::back()->with('mensaje2','Datos Cargados Correctamente');
+         
 
         //traer nombre del archivo a cargar
         //$realName    = Input::file('file')->getClientOriginalName();
         //Actualizo el nombre del archivo cuando esta vacio
-        Scifi::where('arc_carga', '=', " ")->update(array('arc_carga'=>$realName));
+        //Scifi::where('arc_carga', '=', " ")->update(array('arc_carga'=>$realName));
 
 		//return Scifi::all();
-        return View::make('admin');
+        //return View::make('admin');
+        //return View::make('sistema.carga.cargas');
+        //return Redirect::action('sistema\UsersController@getIndex');
+
     }
 
 

@@ -1,0 +1,23 @@
+commit 05829475fddeebc0030cd6208b6d2489c1e2f193
+Author: Jorge Vasquez <jorgevasquezretamal@gmail.com>
+Date:   Tue Jan 19 12:30:00 2016 -0300
+
+    Carga y descarga archivos
+
+commit a2a36e9ea0248f1986cd34ec26765b08f9ad8289
+Author: Jorge Vasquez <jorgevasquezretamal@gmail.com>
+Date:   Mon Jan 11 22:14:17 2016 -0300
+
+    Mantenedor Usuarios
+
+commit 5a71c3bdc9afe0707241c0fd458b564a8d2cc5fa
+Author: Jorge Vasquez <jorgevasquezretamal@gmail.com>
+Date:   Sun Jan 10 00:08:03 2016 -0300
+
+    login
+
+commit f0671dfa77d063174a425056609b59b96d1029a5
+Author: Jorge Vasquez <jorgevasquezretamal@gmail.com>
+Date:   Fri Jan 8 16:31:29 2016 -0300
+
+    Comit Inicial

@@ -30,7 +30,7 @@
 	<div class="row">
 	<div class="col-md-6">
 			{{ Form::label('direccion', 'Dirección') }}
-			{{ Form::text('direccion', '', array('class'=>'form-control', 'placeholder'=>'Ingrese su Dirección',)) }}
+			{{ Form::text('direccion', '', array('class'=>'form-control', 'placeholder'=>'Ingrese su Dirección','required' => true)) }}
 		</div>
 		<div class="col-md-3">
 			{{ Form::label('pais_id', 'País') }}
@@ -47,7 +47,7 @@
 		<div class="row">
 			<div class="col-md-4">
 				{{ Form::label('fnacimiento','Fecha de nacimiento') }}<br>
-				{{ Form::text('fnacimiento', '', array('class'=>'txtDate' , 'placeholder'=>'Ingrese Fecha',)) }}
+				{{ Form::text('fnacimiento', '', array('class'=>'txtDate' , 'placeholder'=>'Ingrese Fecha','required' => true)) }}
 			</div>
 		</div>
 				
