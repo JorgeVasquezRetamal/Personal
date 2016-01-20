@@ -12,7 +12,21 @@
     	</div>
     	<div class="panel-body">
         {{ Form::label('file', 'Adjuntar Archivo') }} 
-        {{ Form::file('file') }}  {{ $errors->first() }} {{ Session::get('mensaje') }}
+        {{ Form::file('file') }}  
+        
+        @if(Session::has('mensaje') or $errors->first())
+          <div class="alert alert-danger">
+            {{ Session::get('mensaje') }}
+            {{ $errors->first() }}
+          </div>
+        @endif
+
+        @if(Session::has('mensaje2'))
+          <div class="alert alert-success">
+            {{ Session::get('mensaje2') }}
+          </div>
+        @endif
+
 
     	</div>
       <div class="panel-footer">

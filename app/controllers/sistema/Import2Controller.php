@@ -29,6 +29,7 @@ class Import2Controller extends \BaseController
 
         }
 
+        
 
         //traer nombre del archivo a cargar
         
@@ -66,8 +67,12 @@ class Import2Controller extends \BaseController
             }
 
         });
-            return Redirect::back()->with('mensaje2','Datos Cargados Correctamente');
+            //return Redirect::back()->with('mensaje2','Datos Cargados Correctamente');
+
          
+
+            return Redirect::back()->with('mensaje2','Archivo Cargado Correctamente');
+
 
         //traer nombre del archivo a cargar
         //$realName    = Input::file('file')->getClientOriginalName();
