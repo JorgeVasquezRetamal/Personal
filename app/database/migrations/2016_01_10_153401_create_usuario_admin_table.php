@@ -17,8 +17,8 @@ class CreateUsuarioAdminTable extends Migration {
 		$user->nombre       = 'Jorge Vásquez';
 		$user->password   = Hash::make('jo112110');
 		$user->direccion 	  = 'casa';
-		$user->ciudad_id 	  = 1;
-		$user->pais_id = 1;
+		$user->ciudad_id 	  = '1';
+		$user->pais_id = '1';
 		$user->estado    = 'Activo';
 		$user->perfil    = 'Administrador';
 		$user->usuario    = 'jorge';

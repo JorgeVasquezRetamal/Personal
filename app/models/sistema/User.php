@@ -24,6 +24,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	//protected $hidden = array('password', 'remember_token');
-	public function pais(){return $this->belongsTo('sistema\pais', 'pais_id');}
-	public function ciudad(){return $this->belongsTo('sistema\ciudad', 'ciudad_id');}
+	public function pais()
+	{
+		return $this->belongsTo('sistema\pais', 'pais_id');
+	}
+
+	public function ciudad()
+	{
+		return $this->belongsTo('sistema\ciudad', 'ciudad_id');
+	}
 }

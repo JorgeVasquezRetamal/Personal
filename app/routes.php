@@ -39,7 +39,10 @@ Route::controller('ciudad', 'sistema\CiudadesController');
 //Ruta mostrada navegador excel  
 Route::controller('excel', 'sistema\OtrosController');
 
+//rutas de cargas
 Route::controller('carga', 'sistema\Import2Controller');
+
+//Route::controller('cargatxt', 'sistema\Import2Controller');
 
 
 

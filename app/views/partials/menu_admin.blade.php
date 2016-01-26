@@ -29,6 +29,8 @@
 	</a>
 	<ul class="dropdown-menu">
 		<li><a href="{{ action('sistema\Import2Controller@getActionEdit') }}">Cargar Excel</a></li>
+		<li><a href="{{ action('sistema\Import2Controller@getActionEdit2') }}">Cargar TXT</a></li>
+		<li><a href="{{ action('sistema\Import2Controller@getActionEdittefbech') }}">Cargar TEF BECH</a></li>
 		<li class="divider"></li> 
 		
 	</ul>

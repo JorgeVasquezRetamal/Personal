@@ -23,7 +23,10 @@ class Pais extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	//protected $hidden = array('password', 'remember_token');
-	public function ciudad(){return $this->hasMany('sistema\Ciudad', 'pais_id');}
+	public function ciudad()
+	{
+		return $this->hasMany('sistema\Ciudad', 'pais_id');
+	}
 	//public function flag(){return $this->morphOne('DIPLOMAS\File', 'fileable');}
 
 

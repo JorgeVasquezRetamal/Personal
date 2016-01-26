@@ -127,6 +127,50 @@ class OtrosController extends \BaseController
   }
 
 
+
+
+ public function getActionTXT2() 
+ {
+
+   $prospects = User::join('ciudad', 'usuarios.ciudad_id', '=', 'ciudad.id')           
+   ->join('pais', 'usuarios.pais_id', '=', 'pais.id')            
+   ->orderBy('usuarios.nombre','desc')           
+   ->select('usuarios.nombre as nombre','usuarios.usuario as usuario',            
+    'usuarios.perfil as perfil','usuarios.estado as estado','usuarios.direccion as direccion',            
+    'usuarios.created_at as created_at', 'usuarios.updated_at as updated_at',
+    'ciudad.nombre as ciudad','pais.nombre as pais')->get();        
+
+
+   $fecha=date('d-m-Y his');
+   $cabecera = 'Nombre;Usuario;Perfil;Estado;Dirección;Pais;Ciuadad;Ingresado;Actualizado';
+
+   echo  (rtrim($cabecera."\n"));
+   echo PHP_EOL;
+
+   $output='';
+
+
+   foreach ($prospects as $row) 
+   {
+
+          //$output.=  implode(";",$row->toArray())."\r\n";
+    $output.=  implode(";",$row->toArray()) .PHP_EOL;
+  }
+
+
+  $headers = array(
+    'Content-Type' => 'text/plain',
+    'Content-Disposition' => 'attachment;    filename="Listado Usuarios"' . $fecha .".txt",
+    );
+
+
+  return Response::make(rtrim($output, PHP_EOL), 200, $headers);
+
+}
+
+
+
+
    public function getActionEdit()
     {
        
