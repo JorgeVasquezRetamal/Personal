@@ -12,7 +12,7 @@ class HomeController extends BaseController {
 	public function postLogin()
 	{
 
-		// return User::all();
+		 return User::all();
 
 		// return \Hash::make('jorge2');
 
@@ -100,11 +100,14 @@ class HomeController extends BaseController {
 		->with('ciudad_cmb', $ciudad_cmb)
 		;
 
+		
+
 	}
 
 	public function getHome()
 	{
 		return View::make('home');
+		
 	}
 
 	public function getIndex(){
