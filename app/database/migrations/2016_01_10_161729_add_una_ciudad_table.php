@@ -14,7 +14,7 @@ class AddUnaCiudadTable extends Migration {
 	{
 		$user = new sistema\Ciudad;
 		$user->nombre       = 'Santiago';
-		
+				
 		$user->save();
 	}
 

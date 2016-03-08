@@ -42,7 +42,9 @@ Route::controller('excel', 'sistema\OtrosController');
 //rutas de cargas
 Route::controller('carga', 'sistema\Import2Controller');
 
-//Route::controller('cargatxt', 'sistema\Import2Controller');
+
+Route::controller('vista1','sistema\VistaController');
+
 
 
 

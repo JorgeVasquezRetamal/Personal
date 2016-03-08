@@ -12,7 +12,7 @@ class HomeController extends BaseController {
 	public function postLogin()
 	{
 
-		 return User::all();
+		 //return User::all();
 
 		// return \Hash::make('jorge2');
 

@@ -36,6 +36,19 @@
 	</ul>
 </li>
 
+<li class="dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+		Otros <span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu">
+		<li><a href="{{ action('sistema\VistaController@getIndex') }}">Otros</a></li>
+		<li class="divider"></li> 
+		
+	</ul>
+
+
+</li>
+
 
 
 <li><a href="{{ action('sistema\HomeController@getLogout') }}">Salir</a></li>
