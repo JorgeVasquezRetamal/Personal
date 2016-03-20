@@ -45,6 +45,9 @@ Route::controller('carga', 'sistema\Import2Controller');
 
 Route::controller('vista1','sistema\VistaController');
 
+//Ruta Documentos
+Route::controller('documentos','sistema\DocumentosController');
+
 
 
 

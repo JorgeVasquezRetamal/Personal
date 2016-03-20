@@ -45,8 +45,18 @@
 		<li class="divider"></li> 
 		
 	</ul>
+</li>
 
+<li class="dropdown">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+		Documentos <span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu">
+		<li><a href="{{ action('sistema\DocumentosController@getIndex') }}">Documentos</a></li>
 
+		<li class="divider"></li> 
+		
+	</ul>
 </li>
 
 
